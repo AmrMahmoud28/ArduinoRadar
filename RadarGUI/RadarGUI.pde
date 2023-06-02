@@ -85,7 +85,7 @@ void drawObject() {
   stroke(255,10,10); // red color
   pixsDistance = iDistance*((height-height*0.1666)*0.025); // covers the distance from the sensor from cm to pixels
   // limiting the range to 40 cms
-  if(iDistance < 40 && iDistance > 3){
+  if(iDistance < 40 && iDistance > 5){
     // draws the object according to the angle and the distance
   line(pixsDistance*cos(radians(iAngle)),-pixsDistance*sin(radians(iAngle)),(width-width*0.505)*cos(radians(iAngle)),-(width-width*0.505)*sin(radians(iAngle)));
   }
@@ -105,7 +105,7 @@ void drawLine() {
 
 void drawText() { // draws the texts on the screen
   pushMatrix();
-  if(iDistance > 40 || iDistance <= 3) {
+  if(iDistance > 40 || iDistance <= 5) {
   noObject = "Out of Range";
   }
   else {
@@ -125,7 +125,7 @@ void drawText() { // draws the texts on the screen
   text("Amr Mahmoud's Radar ", width-width*0.875, height-height*0.0277);
   text("Angle: " + iAngle +" °", width-width*0.48, height-height*0.0277);
   text("Distance: ", width-width*0.26, height-height*0.0277);
-  if(iDistance < 40 && iDistance > 3) {
+  if(iDistance < 40 && iDistance > 5) {
   text("            " + iDistance +" cm", width-width*0.225, height-height*0.0277);
   }
   textSize(25);
